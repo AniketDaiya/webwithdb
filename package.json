@@ -1,0 +1,14 @@
+{
+  "name": "genai-bootcamp",
+  "version": "1.0.0",
+  "description": "GenAI & Context Engineering Mastery Bootcamp",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite genai-context-main/genai-bootcamp",
+    "build": "vite build genai-context-main/genai-bootcamp",
+    "preview": "vite preview genai-context-main/genai-bootcamp"
+  },
+  "dependencies": {
+    "vite": "^5.0.0"
+  }
+}

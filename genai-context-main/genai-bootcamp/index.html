@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GenAI & Context Engineering Mastery Bootcamp | 7 Days to Mastery</title>
+    <meta name="description" content="Master Generative AI and Context Engineering in just 7 days. Premium offline course for beginners.">
+    <link rel="stylesheet" href="style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Supabase JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div class="blur-content">
+        <div class="blob-container">
+        <div class="blob"></div>
+        <div class="blob"></div>
+    </div>
+
+    <nav id="navbar">
+        <div class="logo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="gradient-text"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M4.93 19.07L19.07 4.93"/></svg>
+            <span>GenAI <span class="gradient-text">Mastery</span></span>
+        </div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#syllabus">Syllabus</a>
+            <a href="#instructor">Instructor</a>
+            <a href="#faq">FAQ</a>
+            <button id="auth-btn" class="btn-secondary" onclick="openAuthModal()">Login</button>
+            <button class="btn-premium" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Enroll Now</button>
+            <button id="theme-toggle" class="btn-secondary" style="padding: 0.5rem;"><i data-lucide="moon"></i></button>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="floating-ui">
+            <div class="ui-card c1">
+                <div style="display:flex; gap:10px; align-items:center;">
+                    <i data-lucide="zap" style="color:var(--primary)"></i>
+                    <div>
+                        <small style="color:var(--text-dim)">Speed</small>
+                        <p>10x Efficiency</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-card c2">
+                <div style="display:flex; gap:10px; align-items:center;">
+                    <i data-lucide="brain-circuit" style="color:var(--secondary)"></i>
+                    <div>
+                        <small style="color:var(--text-dim)">Intelligence</small>
+                        <p>Context Aware</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-card c3">
+                <p>₹25,000+ Value Course</p>
+            </div>
+        </div>
+
+        <div class="hero-badge">🚀 Next Batch Starting in: <span id="countdown">00d 00h 00m 00s</span></div>
+        <h1>Master GenAI & <br><span class="gradient-text">Context Engineering</span></h1>
+        <p>Learn AI the Right Way in Just 7 Days. From Transformers to advanced RAG, build real-world AI solutions with free tools only.</p>
+        
+        <div class="hero-ctas">
+            <button class="btn-premium" onclick="document.getElementById('syllabus').scrollIntoView({behavior: 'smooth'})">View Syllabus</button>
+            <button class="btn-secondary" onclick="openModal()">Download Handbook</button>
+        </div>
+
+        <div style="margin-top: 4rem; width: 300px;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem;">
+                <small>Seats Availability</small>
+                <small id="seats-left">12 / 30 left</small>
+            </div>
+            <div style="background:var(--border); height:8px; border-radius:10px; overflow:hidden;">
+                <div id="progress-bar" style="background:linear-gradient(90deg, var(--primary), var(--secondary)); width:60%; height:100%; transition: width 1s ease;"></div>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="section">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h2 class="gradient-text">Why This Course?</h2>
+            <p style="color:var(--text-dim)">The gap between using AI and mastering AI is Context Engineering.</p>
+        </div>
+        
+        <div class="bento-grid">
+            <div class="bento-item large">
+                <div>
+                    <i data-lucide="sparkles" style="color:var(--primary); margin-bottom:1rem;"></i>
+                    <h3>What is GenAI?</h3>
+                    <p>It's not just chat. It's about generative intelligence. We break down Transformers, Attention mechanisms, and Tokenization into simple, digestible pieces.</p>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-value">7</span>
+                        <span class="stat-label">Days</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">1.5h</span>
+                        <span class="stat-label">Daily</span>
+                    </div>
+                </div>
+            </div>
+            <div class="bento-item medium">
+                <i data-lucide="layers" style="color:var(--secondary); margin-bottom:1rem;"></i>
+                <h3>Context Engineering</h3>
+                <p>Master the art of structuring data, persona design, and knowledge injection to get perfect outputs every single time.</p>
+            </div>
+            <div class="bento-item">
+                <i data-lucide="wrench" style="color:var(--primary); margin-bottom:1rem;"></i>
+                <h3>Free Tools Only</h3>
+                <p>Gemini, NotebookLM, Hugging Face, and Poe. No subscriptions required.</p>
+            </div>
+            <div class="bento-item">
+                <i data-lucide="award" style="color:var(--secondary); margin-bottom:1rem;"></i>
+                <h3>Certificate</h3>
+                <p>Industry-recognized certification upon project completion.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="syllabus" class="section" style="background: rgba(0,0,0,0.1)">
+        <div class="syllabus-controls">
+            <div>
+                <h2 class="gradient-text">7-Day Curriculum</h2>
+                <p style="color:var(--text-dim)">The roadmap to AI mastery.</p>
+            </div>
+            <input type="text" id="search-syllabus" class="search-box" placeholder="Search topics (e.g. RAG, Prompts)...">
+        </div>
+
+        <div class="timeline" id="syllabus-container">
+            <!-- Day 1 -->
+            <div class="day-card" data-topics="Transformers, Tokens, Gemini, Intro">
+                <div class="day-header" onclick="toggleDay(this)">
+                    <div class="day-info">
+                        <span class="day-number">01</span>
+                        <h3>The Engine Room: Foundations</h3>
+                    </div>
+                    <i data-lucide="chevron-down"></i>
+                </div>
+                <div class="day-content">
+                    <p><strong>Goal:</strong> Demystify LLMs and set up the toolset.</p>
+                    <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+                        <li>Intro to Transformers & Next Token Prediction</li>
+                        <li>Tool Tour: Gemini, ChatGPT, Hugging Face</li>
+                        <li>The Token Game: Understanding AI thinking</li>
+                    </ul>
+                    <p><small><strong>Mini Project:</strong> Predictor Bot Setup</small></p>
+                </div>
+            </div>
+
+            <!-- Day 2 -->
+            <div class="day-card" data-topics="Zero-shot, Few-shot, Chain of Thought, Logic">
+                <div class="day-header" onclick="toggleDay(this)">
+                    <div class="day-info">
+                        <span class="day-number">02</span>
+                        <h3>The Art of the Prompt</h3>
+                    </div>
+                    <i data-lucide="chevron-down"></i>
+                </div>
+                <div class="day-content">
+                    <p><strong>Goal:</strong> Master foundational prompting techniques.</p>
+                    <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+                        <li>Zero-shot vs. Few-shot: Why examples matter</li>
+                        <li>Chain-of-Thought (CoT) Engineering</li>
+                        <li>Solving Logic Puzzles with AI</li>
+                    </ul>
+                    <p><small><strong>Mini Project:</strong> The Logic Solver</small></p>
+                </div>
+            </div>
+
+            <!-- Day 3 -->
+            <div class="day-card" data-topics="System Messages, Persona, God Mode, Constraints">
+                <div class="day-header" onclick="toggleDay(this)">
+                    <div class="day-info">
+                        <span class="day-number">03</span>
+                        <h3>Context Architecture</h3>
+                    </div>
+                    <i data-lucide="chevron-down"></i>
+                </div>
+                <div class="day-content">
+                    <p><strong>Goal:</strong> Engineering the environment around the prompt.</p>
+                    <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+                        <li>System Messages: The "God Mode" of prompts</li>
+                        <li>Persona Engineering (Senior Dev vs. 5-year-old)</li>
+                        <li>Building Guardrails and Constraints</li>
+                    </ul>
+                    <p><small><strong>Mini Project:</strong> Build a Tutor Bot</small></p>
+                </div>
+            </div>
+
+            <!-- Day 4 -->
+            <div class="day-card" data-topics="RAG, NotebookLM, Memory, Knowledge Gap">
+                <div class="day-header" onclick="toggleDay(this)">
+                    <div class="day-info">
+                        <span class="day-number">04</span>
+                        <h3>Memory & Retrieval (Conceptual RAG)</h3>
+                    </div>
+                    <i data-lucide="chevron-down"></i>
+                </div>
+                <div class="day-content">
+                    <p><strong>Goal:</strong> How to give AI knowledge it wasn't trained on.</p>
+                    <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+                        <li>The Knowledge Gap & Training Cutoffs</li>
+                        <li>Deep Dive: NotebookLM for PDF Intelligence</li>
+                        <li>Manual RAG: Copy-paste context engineering</li>
+                    </ul>
+                    <p><small><strong>Mini Project:</strong> The Wikipedia Chatbot</small></p>
+                </div>
+            </div>
+
+            <!-- Day 5 -->
+            <div class="day-card" data-topics="Vision, Image Gen, Multimodal, Gemini Vision">
+                <div class="day-header" onclick="toggleDay(this)">
+                    <div class="day-info">
+                        <span class="day-number">05</span>
+                        <h3>Multi-Modal Context</h3>
+                    </div>
+                    <i data-lucide="chevron-down"></i>
+                </div>
+                <div class="day-content">
+                    <p><strong>Goal:</strong> Context beyond text.</p>
+                    <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+                        <li>Vision Models: Gemini for UI analysis</li>
+                        <li>Prompting for DALL-E & Stable Diffusion</li>
+                        <li>Multi-modal synthesis (Image to Code)</li>
+                    </ul>
+                    <p><small><strong>Mini Project:</strong> Screenshot to Wireframe</small></p>
+                </div>
+            </div>
+
+            <!-- Day 6 -->
+            <div class="day-card" data-topics="Hallucinations, Ethics, Truth Filter, Fact Check">
+                <div class="day-header" onclick="toggleDay(this)">
+                    <div class="day-info">
+                        <span class="day-number">06</span>
+                        <h3>The Truth Filter</h3>
+                    </div>
+                    <i data-lucide="chevron-down"></i>
+                </div>
+                <div class="day-content">
+                    <p><strong>Goal:</strong> Managing hallucinations and ethics.</p>
+                    <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+                        <li>Why AI lies: Probability vs. Fact</li>
+                        <li>Self-Correction techniques & Review prompts</li>
+                        <li>Bias detection and safety guardrails</li>
+                    </ul>
+                    <p><small><strong>Mini Project:</strong> The AI Fact-Checker</small></p>
+                </div>
+            </div>
+
+            <!-- Day 7 -->
+            <div class="day-card" data-topics="Capstone, Final Project, Masterpiece">
+                <div class="day-header" onclick="toggleDay(this)">
+                    <div class="day-info">
+                        <span class="day-number">07</span>
+                        <h3>The Masterpiece (Capstone)</h3>
+                    </div>
+                    <i data-lucide="chevron-down"></i>
+                </div>
+                <div class="day-content">
+                    <p><strong>Goal:</strong> Apply everything to a real-world problem.</p>
+                    <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+                        <li>Final Project Brief & Goal Setting</li>
+                        <li>Building a Context-Aware Assistant for your niche</li>
+                        <li>Demo, Feedback, and Graduation!</li>
+                    </ul>
+                    <p><small><strong>Mini Project:</strong> Industry-Specific AI Assistant</small></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="instructor" class="section">
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items:center;">
+            <div>
+                <h2 class="gradient-text">Hands-On Learning</h2>
+                <p style="margin: 1.5rem 0; color:var(--text-dim)">Our teaching methodology is simple: <strong>Zero Slides. Max Action.</strong> We believe AI is learned by talking to it, not watching it.</p>
+                <div style="display:flex; flex-direction:column; gap:1.5rem;">
+                    <div style="display:flex; gap:1rem; align-items:flex-start;">
+                        <i data-lucide="check-circle" style="color:var(--primary)"></i>
+                        <p><strong>Beginner Friendly:</strong> No coding required to start mastering context.</p>
+                    </div>
+                    <div style="display:flex; gap:1rem; align-items:flex-start;">
+                        <i data-lucide="check-circle" style="color:var(--primary)"></i>
+                        <p><strong>Career Focused:</strong> Learn skills that companies are actually hiring for.</p>
+                    </div>
+                    <div style="display:flex; gap:1rem; align-items:flex-start;">
+                        <i data-lucide="check-circle" style="color:var(--primary)"></i>
+                        <p><strong>Expert Support:</strong> 1-on-1 guidance during project build time.</p>
+                    </div>
+                </div>
+            </div>
+            <div style="background:var(--bg-card); border: 1px solid var(--border); padding: 3rem; border-radius: 30px; position:relative;">
+                <div style="position:absolute; top:-20px; left:20px; background:var(--primary); padding: 0.5rem 1rem; border-radius:10px; font-weight:800;">INSTRUCTOR NOTES</div>
+                <p style="font-style: italic; color:var(--text-dim)">"The model's output is a reflection of the input's quality. If you master the context, you master the machine."</p>
+                <div style="margin-top: 2rem; display:flex; gap:1rem; align-items:center;">
+                    <div style="width:50px; height:50px; background:var(--primary); border-radius:50%;"></div>
+                    <div>
+                        <strong>GenAI Expert Team</strong>
+                        <p><small>Senior Context Engineers</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="section" style="background: rgba(0,0,0,0.1)">
+        <h2 style="text-align:center; margin-bottom:3rem;" class="gradient-text">Frequently Asked Questions</h2>
+        <div style="max-width: 800px; margin: 0 auto; display:flex; flex-direction:column; gap:1rem;">
+            <div class="day-card">
+                <div class="day-header" onclick="toggleDay(this)">
+                    <p>Do I need to know coding?</p>
+                    <i data-lucide="chevron-down"></i>
+                </div>
+                <div class="day-content"><p>Absolutely not! This course is designed for non-coders and beginners who want to use AI to its full potential.</p></div>
+            </div>
+            <div class="day-card">
+                <div class="day-header" onclick="toggleDay(this)">
+                    <p>Is this an online course?</p>
+                    <i data-lucide="chevron-down"></i>
+                </div>
+                <div class="day-content"><p>No, this is a premium offline bootcamp conducted in a classroom setting for better hands-on learning.</p></div>
+            </div>
+            <div class="day-card">
+                <div class="day-header" onclick="toggleDay(this)">
+                    <p>Will I get a certificate?</p>
+                    <i data-lucide="chevron-down"></i>
+                </div>
+                <div class="day-content"><p>Yes, you will receive a GenAI & Context Engineering Mastery Certificate upon completion of your capstone project.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+            <h2 class="gradient-text">Ready to Master AI?</h2>
+            <p style="margin-bottom: 3rem; color:var(--text-dim)">Join the next batch and transform your workflow.</p>
+            <form id="contact-form" style="display:flex; flex-direction:column; gap:1.5rem;">
+                <input type="text" placeholder="Full Name" class="search-box" style="width:100%" required>
+                <input type="email" placeholder="Email Address" class="search-box" style="width:100%" required>
+                <textarea placeholder="Tell us about your goals" class="search-box" style="width:100%; height:150px; border-radius:20px;" required></textarea>
+                <button type="submit" class="btn-premium" style="width:100%">Join Waitlist</button>
+            </form>
+        </div>
+    </section>
+
+    <footer style="padding: 4rem 10%; border-top: 1px solid var(--border); text-align:center;">
+        <div class="logo" style="justify-content:center; margin-bottom:2rem;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="gradient-text"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M4.93 19.07L19.07 4.93"/></svg>
+            <span>GenAI <span class="gradient-text">Mastery</span></span>
+        </div>
+        <p style="color:var(--text-dim)">&copy; 2026 GenAI Academy. All rights reserved.</p>
+    </footer>
+
+    <button id="back-to-top" class="btn-secondary" style="position:fixed; bottom:30px; right:30px; display:none; border-radius:50%; width:50px; height:50px; padding:0; justify-content:center; align-items:center;"><i data-lucide="arrow-up"></i></button>
+    </div>
+
+    <!-- PDF Modal -->
+    <div id="pdfModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div style="height:100%; display:flex; flex-direction:column;">
+                <div style="padding: 1.5rem 2rem; border-bottom: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+                    <div>
+                        <h2 style="font-size: 1.5rem;" class="gradient-text">Course Handbook</h2>
+                        <p style="color:var(--text-dim); font-size:0.8rem;">GenAI & Context Engineering Mastery v2.0</p>
+                    </div>
+                    <div style="display:flex; gap:1rem; align-items:center;">
+                        <a href="https://drive.google.com/file/d/1NppKUVFizwQ6OxN9PjCIHi6A1Jv1CEPf/view?usp=sharing" target="_blank" class="btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Open in Drive</a>
+                        <button class="btn-premium" style="padding: 0.5rem 1rem; font-size: 0.8rem;" onclick="printIframe()">Print PDF</button>
+                    </div>
+                </div>
+                <div style="flex-grow: 1; position: relative; background: #1a1a1a;">
+                    <iframe id="pdf-viewer" src="" data-src="https://drive.google.com/file/d/1NppKUVFizwQ6OxN9PjCIHi6A1Jv1CEPf/preview" style="width: 100%; height: 100%; border: none;" allow="autoplay"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Auth Overlay -->
+    <div id="auth-overlay" class="auth-overlay">
+        <div class="auth-card">
+            <button class="close-auth" onclick="closeAuthModal()">&times;</button>
+            <div id="auth-form-container">
+                <!-- Login Form -->
+                <div id="login-form">
+                    <h2 class="gradient-text">Welcome Back</h2>
+                    <p style="color:var(--text-dim); margin-bottom: 2rem;">Login to access the course materials.</p>
+                    <form onsubmit="handleSignIn(event)">
+                        <input type="email" id="login-email" placeholder="Email Address" class="search-box" style="width:100%; margin-bottom: 1rem;" required>
+                        <input type="password" id="login-password" placeholder="Password" class="search-box" style="width:100%; margin-bottom: 1.5rem;" required>
+                        <button type="submit" class="btn-premium" style="width:100%">Sign In</button>
+                    </form>
+                    <p style="margin-top: 1.5rem; font-size: 0.9rem;">Don't have an account? <a href="#" onclick="toggleAuthMode('signup')" style="color:var(--primary)">Sign Up</a></p>
+                </div>
+
+                <!-- Signup Form -->
+                <div id="signup-form" style="display: none;">
+                    <h2 class="gradient-text">Create Account</h2>
+                    <p style="color:var(--text-dim); margin-bottom: 2rem;">Start your journey to AI mastery.</p>
+                    <form onsubmit="handleSignUp(event)">
+                        <input type="text" id="signup-name" placeholder="Full Name" class="search-box" style="width:100%; margin-bottom: 1rem;" required>
+                        <input type="email" id="signup-email" placeholder="Email Address" class="search-box" style="width:100%; margin-bottom: 1rem;" required>
+                        <input type="password" id="signup-password" placeholder="Password" class="search-box" style="width:100%; margin-bottom: 1.5rem;" required>
+                        <button type="submit" class="btn-premium" style="width:100%">Create Account</button>
+                    </form>
+                    <p style="margin-top: 1.5rem; font-size: 0.9rem;">Already have an account? <a href="#" onclick="toggleAuthMode('login')" style="color:var(--primary)">Login</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
