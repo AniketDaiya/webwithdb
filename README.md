@@ -7,7 +7,7 @@
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)](https://supabase.com)
 [![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev)
-[![Deployment](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://sunny-bienenstitch-7c7f1f.netlify.app/)
+[![Deployment](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://webpattydb.netlify.app/)
 
 Welcome to the official repository for the **GenAI & Context Engineering Mastery Bootcamp** landing page — **Full-Stack Edition**. This web application serves as a high-converting, premium marketing landing page and interactive curriculum dashboard with **user authentication** and **database persistence**. It presents a comprehensive, fast-paced 7-day bootcamp roadmap covering everything from Transformer foundations to advanced Retrieval-Augmented Generation (RAG) and Context Architecture.
 
@@ -77,7 +77,7 @@ Check out the responsive layout of the web application in action:
 ## 🚀 Live Deployment
 
 The application is deployed and publicly accessible online:
-🔗 **[Visit GenAI & Context Engineering Mastery Bootcamp](https://sunny-bienenstitch-7c7f1f.netlify.app/)**
+🔗 **[Visit GenAI & Context Engineering Mastery Bootcamp](https://webpattydb.netlify.app/)**
 
 ---
 
